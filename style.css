@@ -61,3 +61,11 @@ main h1 {
   margin-block: 1rem;
   font-size: 1.5rem;
 }
+
+#score_display {
+  font-size: 1.5rem;
+  margin-block: 16px;
+  word-spacing: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

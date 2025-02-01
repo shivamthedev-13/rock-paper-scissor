@@ -4,12 +4,19 @@ const scissorBtnEL = document.querySelector(".scissor_btn");
 const displayEl = document.querySelector("#display");
 const scoreDisplayEl = document.querySelector("#score_display");
 const resetBtnEl = document.querySelector(".reset_btn");
+const winScoreEl = document.querySelector("#win_score");
+const loseScoreEl = document.querySelector("#lose_score");
+const tieScoreEl = document.querySelector("#tie_score");
 
-const score = {
+const score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   looses: 0,
   ties: 0,
 };
+
+winScoreEl.textContent = score.wins;
+loseScoreEl.textContent = score.looses;
+tieScoreEl.textContent = score.ties;
 
 resetBtnEl.onclick = function () {
   score.wins = 0;
@@ -19,6 +26,8 @@ resetBtnEl.onclick = function () {
   scoreDisplayEl.querySelector("#win_score").textContent = score.wins;
   scoreDisplayEl.querySelector("#lose_score").textContent = score.looses;
   scoreDisplayEl.querySelector("#tie_score").textContent = score.ties;
+
+  localStorage.removeItem("score");
 };
 
 rockBtnEl.onclick = function () {
@@ -79,6 +88,8 @@ function updateScore(result) {
   } else if (result === "Tie") {
     score.ties++;
   }
+
+  localStorage.setItem("score", JSON.stringify(score));
 
   scoreDisplayEl.querySelector("#win_score").textContent = score.wins;
   scoreDisplayEl.querySelector("#lose_score").textContent = score.looses;

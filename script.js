@@ -76,8 +76,8 @@ function getResult(userChoice, computerChoice) {
 }
 
 function displayResult(result, userChoice, computerChoice) {
-  const resultText = `You chose ${userChoice}, Computer Chose ${computerChoice}, ${result}`;
-  displayEl.textContent = resultText;
+  const resultText = `You chose ${userChoice}, Computer Chose ${computerChoice},</br></br>${result}</br>`;
+  displayEl.innerHTML = resultText;
 }
 
 function updateScore(result) {

@@ -40,7 +40,8 @@ main h1 {
   flex-wrap: wrap;
 }
 
-.btns > button {
+.btns > button,
+.reset_btn {
   padding: 8px 16px;
   font-size: 1rem;
   font-weight: 600;
@@ -53,7 +54,8 @@ main h1 {
   transition: background ease-in-out 300ms;
 }
 
-.btns > button:hover {
+.btns > button:hover,
+.reset_btn:hover {
   background-color: #000;
 }
 
